@@ -1,0 +1,33 @@
+.swiper {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: rgba(246, 246, 246);
+}
+
+.swiper-slide {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.slide_info {
+  padding: 0 4rem;
+}
+
+.slide_description {
+  text-align: center;
+}
+
+.slide_title {
+  text-align: center;
+}

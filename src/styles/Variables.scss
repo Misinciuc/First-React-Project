@@ -1,0 +1,17 @@
+$mainColor: #62a4de;
+$logoColor: #2d414f;
+$hoverColor: #1067be;
+
+@mixin btn {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+  background-color: $mainColor;
+  border: none;
+  &:hover {
+    background-color: $hoverColor;
+  }
+}

@@ -1,0 +1,95 @@
+@use "./Variables" as *;
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.455);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  transition: 0.5s all;
+  opacity: 0;
+  pointer-events: none;
+
+  &_active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &_content {
+    border-radius: 25px;
+    background-color: white;
+    padding: 2rem 20px;
+    scale: 0.5;
+    transition: 0.5s all;
+
+    &_active {
+      scale: 1;
+      transition: 0.5s all;
+    }
+  }
+}
+
+.register {
+  width: 520px;
+
+  &_title {
+    text-align: center;
+    font-size: 34px;
+    color: $mainColor;
+    letter-spacing: 1px;
+  }
+  &_wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  &_block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &_input {
+    height: 30px;
+    margin: 10px 10px;
+    padding-left: 10px;
+    border: 0.5px solid $mainColor;
+  }
+  &_label {
+    color: rgb(124, 113, 113);
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  &_checkbox_wraper {
+    margin-bottom: 1rem;
+  }
+
+  #register_checkbox {
+    margin-left: 10px;
+  }
+  &_btn {
+    @include btn;
+    font-size: 14px;
+    margin: 0 auto;
+  }
+  &_p {
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    color: $logoColor;
+  }
+
+  .sing-in_btn {
+    @include btn;
+    text-transform: uppercase;
+    margin: 0 auto;
+  }
+}
