@@ -1,0 +1,64 @@
+@use "./Variables" as *;
+
+.cart {
+  background-color: #f6f6f6;
+  width: 60vw;
+  margin: 0 auto;
+  border: 1px solid teal;
+  &_item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    &-img {
+      display: block;
+      max-width: 15%;
+    }
+    &-title {
+      width: 45%;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    &-price {
+      @include cartdetails;
+    }
+    &-qty {
+      @include cartdetails;
+    }
+    &-btn {
+      width: 10%;
+      text-align: center;
+    }
+    &-subtotal {
+      @include cartdetails;
+    }
+  }
+}
+
+.cart_placeholder {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid grey;
+  &-product {
+    width: 60%;
+    text-align: center;
+  }
+  &-price {
+    width: 10%;
+    text-align: center;
+  }
+  &-qty {
+    width: 10%;
+    text-align: center;
+  }
+  &-subtotal {
+    width: 10%;
+    text-align: center;
+  }
+  &-action {
+    width: 10%;
+    text-align: center;
+  }
+}

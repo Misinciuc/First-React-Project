@@ -1,12 +1,12 @@
-import Modal from "./components/Modal";
 import Home from "./pages/Home";
+
+import { ShoppingContextProvider } from "./context/ContextFunctions";
 
 function App() {
   return (
-    <div>
+    <ShoppingContextProvider>
       <Home />
-      <Modal />
-    </div>
+    </ShoppingContextProvider>
   );
 }
 
