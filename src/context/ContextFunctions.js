@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import { useState } from "react";
-import ShoppingCart from "../components/ShoppingCart";
+import ShoppingCart from "../components/cartComponents/ShoppingCart";
 
 export const ShoppingContext = createContext();
 

@@ -1,16 +1,16 @@
 import { Clear } from "@mui/icons-material";
 import React from "react";
 import { useState } from "react";
-import { useShoppingContext } from "../context/ContextFunctions";
+import { useShoppingContext } from "../../context/ContextFunctions";
 
 const CartItem = ({ item }) => {
   const { removeFromCart, decreaseCartQty, increaseCartQty } =
     useShoppingContext();
-  const [val, setVal] = useState(item.quantity);
+  const [value, setValue] = useState(item.quantity);
 
-  function checkValueInput(valum) {
-    setVal(valum);
-    if (valum > item.quantity) {
+  function checkValueInput(inputValue) {
+    setValue(inputValue);
+    if (inputValue > item.quantity) {
       increaseCartQty(item.id);
     } else {
       decreaseCartQty(item.id);

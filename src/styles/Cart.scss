@@ -4,12 +4,14 @@
   background-color: #f6f6f6;
   width: 60vw;
   margin: 0 auto;
+  margin-top: 20px;
   border: 1px solid teal;
   &_item {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    border-bottom: 1px solid grey;
     &-img {
       display: block;
       max-width: 15%;
@@ -33,6 +35,12 @@
     &-subtotal {
       @include cartdetails;
     }
+  }
+  &_total {
+    @include cartdetails;
+    padding: 20px;
+    width: fit-content;
+    margin-left: auto;
   }
 }
 
