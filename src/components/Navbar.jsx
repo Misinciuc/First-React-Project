@@ -1,14 +1,16 @@
-import React from "react";
 import { useState } from "react";
+import { useShoppingContext } from "../context/ContextFunctions";
 import "../styles/NavBar.scss";
 import Badge from "@mui/material/Badge";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Modal from "./Modal";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [modal1, setModal1] = useState(false);
   const [modal2, setModal2] = useState(false);
+  const { cartQty } = useShoppingContext();
 
   return (
     <div className="navbar">
@@ -89,7 +91,9 @@ const Navbar = () => {
           <input type="text" placeholder="Search..." className="navbar_input" />
         </div>
       </div>
-      <p className="navbar_logo">Perfect_Fit</p>
+      <NavLink to="/home" className="navbar_logo">
+        Perfect_Fit
+      </NavLink>
       <div className="navbar_right">
         <button className="navbar_btn" onClick={() => setModal1(true)}>
           REGISTER
@@ -97,11 +101,11 @@ const Navbar = () => {
         <button className="navbar_btn" onClick={() => setModal2(true)}>
           SING-IN
         </button>
-        <div>
-          <Badge badgeContent={1} color="primary">
+        <NavLink to="/cart">
+          <Badge badgeContent={cartQty} color="primary">
             <ShoppingCartOutlinedIcon style={{ color: "#2d414f" }} />
           </Badge>
-        </div>
+        </NavLink>
       </div>
     </div>
   );

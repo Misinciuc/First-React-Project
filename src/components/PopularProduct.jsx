@@ -1,7 +1,7 @@
 import { AddShoppingCart, FavoriteBorder, Search } from "@mui/icons-material";
 import React from "react";
+import "../styles/Cart.scss";
 import { useShoppingContext } from "../context/ContextFunctions";
-
 import styled from "styled-components";
 
 const Overlay = styled.div`
@@ -67,13 +67,23 @@ const Icon = styled.button`
 
 const PopularProduct = ({ product }) => {
   const { increaseCartQty } = useShoppingContext();
+
+  function clearBackground(event) {
+    event.currentTarget.classList.remove("rotate-in-ver");
+  }
+
+  const handleClick = (event) => {
+    event.currentTarget.classList.add("rotate-in-ver");
+    setTimeout(clearBackground, 1000);
+  };
+
   return (
     <Container>
       <Overlay></Overlay>
       <Img src={product.img} />
       <Title>{product.title}</Title>
       <Info>
-        <Icon>
+        <Icon onClick={handleClick}>
           <AddShoppingCart
             onClick={() =>
               increaseCartQty(

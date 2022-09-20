@@ -1,6 +1,5 @@
 import { createContext, useContext } from "react";
 import { useState } from "react";
-import ShoppingCart from "../components/cartComponents/ShoppingCart";
 
 export const ShoppingContext = createContext();
 
@@ -65,7 +64,6 @@ export function ShoppingContextProvider({ children }) {
       }}
     >
       {children}
-      <ShoppingCart></ShoppingCart>
     </ShoppingContext.Provider>
   );
 }

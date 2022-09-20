@@ -18,7 +18,11 @@ const ShoppingCart = () => {
 
   return (
     <div className="cart">
-      {cartItems.length !== 0 ? <CartItemInfo /> : <div></div>}
+      {cartItems.length !== 0 ? (
+        <CartItemInfo />
+      ) : (
+        <p className="cart_empty">Your Cart is Empty :(</p>
+      )}
       {cartItems.map((item) => (
         <CartItem item={item} key={item.id} />
       ))}
