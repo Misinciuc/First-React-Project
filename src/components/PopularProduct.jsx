@@ -68,13 +68,16 @@ const Icon = styled.button`
 const PopularProduct = ({ product }) => {
   const { increaseCartQty } = useShoppingContext();
 
-  function clearBackground(event) {
-    event.currentTarget.classList.remove("rotate-in-ver");
-  }
+  const addHandleClick = (event) => {
+    const mytarget = event.currentTarget;
+    mytarget.classList.add("addbtn_anim");
+    setTimeout(() => {
+      mytarget.classList.remove("addbtn_anim");
+    }, 1000);
+  };
 
-  const handleClick = (event) => {
-    event.currentTarget.classList.add("rotate-in-ver");
-    setTimeout(clearBackground, 1000);
+  const favoriteHandleClick = (event) => {
+    event.currentTarget.classList.toggle("favbtn_anim");
   };
 
   return (
@@ -83,7 +86,7 @@ const PopularProduct = ({ product }) => {
       <Img src={product.img} />
       <Title>{product.title}</Title>
       <Info>
-        <Icon onClick={handleClick}>
+        <Icon onClick={addHandleClick}>
           <AddShoppingCart
             onClick={() =>
               increaseCartQty(
@@ -95,7 +98,7 @@ const PopularProduct = ({ product }) => {
             }
           ></AddShoppingCart>
         </Icon>
-        <Icon>
+        <Icon onClick={favoriteHandleClick}>
           <FavoriteBorder></FavoriteBorder>
         </Icon>
       </Info>

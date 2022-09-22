@@ -91,7 +91,7 @@ const Navbar = () => {
           <input type="text" placeholder="Search..." className="navbar_input" />
         </div>
       </div>
-      <NavLink to="/home" className="navbar_logo">
+      <NavLink to="/" className="navbar_logo">
         Perfect_Fit
       </NavLink>
       <div className="navbar_right">
