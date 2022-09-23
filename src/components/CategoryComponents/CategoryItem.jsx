@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -47,7 +48,9 @@ const CategoryItem = ({ item }) => {
       <Img src={item.img}></Img>
       <WraperMore>
         <Title>{item.title}</Title>
-        <Button>View more</Button>
+        <NavLink to={item.title}>
+          <Button>View more</Button>
+        </NavLink>
       </WraperMore>
     </Container>
   );
