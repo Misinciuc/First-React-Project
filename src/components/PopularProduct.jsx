@@ -1,4 +1,4 @@
-import { AddShoppingCart, FavoriteBorder, Search } from "@mui/icons-material";
+import { AddShoppingCart, FavoriteBorder } from "@mui/icons-material";
 import React from "react";
 import "../styles/Cart.scss";
 import { useShoppingContext } from "../context/ContextFunctions";
@@ -65,7 +65,7 @@ const Icon = styled.button`
   justify-content: center;
 `;
 
-const PopularProduct = ({ product }) => {
+const PopularProduct = (product) => {
   const { increaseCartQty } = useShoppingContext();
 
   const addHandleClick = (event) => {
@@ -83,17 +83,17 @@ const PopularProduct = ({ product }) => {
   return (
     <Container>
       <Overlay></Overlay>
-      <Img src={product.img} />
-      <Title>{product.title}</Title>
+      <Img src={product.children.img} />
+      <Title>{product.children.title}</Title>
       <Info>
         <Icon onClick={addHandleClick}>
           <AddShoppingCart
             onClick={() =>
               increaseCartQty(
-                product.id,
-                product.img,
-                product.title,
-                product.price
+                product.children.id,
+                product.children.img,
+                product.children.title,
+                product.children.price
               )
             }
           ></AddShoppingCart>

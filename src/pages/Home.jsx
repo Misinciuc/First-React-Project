@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import PopularProducts from "../components/PopularProducts";
 import Slider from "../components/Slider";
+import { bestSellers } from "../AppData/bestsellers";
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
       <Navbar />
       <Slider />
       <Categories />
-      <PopularProducts />
+      <PopularProducts>{bestSellers}</PopularProducts>
       <Newsletter />
       <Footer />
     </div>
